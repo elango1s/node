@@ -1,9 +1,9 @@
 const express = require('express');
 const hbs = require('hbs');
 const fs = require('fs');
+const port = process.env.PORT || 5000;
 
 var app = express();
-var port = 5000;
 
 hbs.registerPartials(__dirname + '/views/partials');
 app.set('view engine', hbs);
@@ -53,6 +53,6 @@ app.get('/index/json', (req,res) => {
 		})
 });
 
-app.listen(5000, () => {
+app.listen(port, () => {
 	console.log(`server is up on ${port} and on dir: ${__dirname}`);
 });
